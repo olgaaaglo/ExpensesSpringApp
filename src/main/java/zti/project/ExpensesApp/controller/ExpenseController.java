@@ -13,7 +13,7 @@ import zti.project.ExpensesApp.model.Expense;
 import zti.project.ExpensesApp.repository.ExpenseRepository;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api")
 public class ExpenseController {
     @Autowired
     private ExpenseRepository expenseRepository;
@@ -21,6 +21,12 @@ public class ExpenseController {
     @GetMapping("/expenses")
     public List<Expense> getAllExpenses() {
         return expenseRepository.findAll();
+    }
+
+    @GetMapping("/expenses/{id}")
+    public Expense getExpense(@PathVariable(value = "id") Long id) throws ResourceNotFoundException {
+        return expenseRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Expense not found for this id: " + id));
     }
 
     @PostMapping("/expenses")

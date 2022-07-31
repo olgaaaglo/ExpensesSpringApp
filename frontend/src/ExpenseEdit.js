@@ -30,10 +30,14 @@ const ExpenseEdit = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(typeof expense.labels);
+    // console.log(typeof expense.labels);
     expense.labels = expense.labels.split(',');
-    console.log(typeof expense.labels);
-    console.log(expense.labels);
+    expense.labels = expense.labels.map(label => { label = label.toLowerCase(); console.log("lower", label); return label;});
+    // console.log(typeof expense.labels);
+    // console.log(expense.labels);
+
+    console.log("Expenses:");
+    console.log(expense);
 
     await fetch('/api/expenses' + (expense.id ? '/' + expense.id : ''), {
       method: (expense.id) ? 'PUT' : 'POST',

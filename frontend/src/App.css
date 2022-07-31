@@ -39,4 +39,19 @@
 
 nav + .container, nav + .container-fluid {
   margin-top: 20px;
-} 
+}
+
+.sum {
+  background-color: orange;
+  padding: 7px;
+  border-radius: 5px;
+  width: 10%;
+  color: white;
+}
+
+.form {
+  background-color: #c761c2;
+  padding: 7px;
+  border-radius: 5px;
+  width: 45%;
+}

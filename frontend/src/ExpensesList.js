@@ -36,7 +36,7 @@ const ExpensesList = () => {
         setLoading(false);
         calculateSum(data);
         
-        let allLabels = data.map(expense => expense.labels[0]);//!!!!!!!!!!!
+        let allLabels = data.map(expense => expense.label);//!!!!!!!!!!!
         setLabels(allLabels.filter(unique));
       })
   }, []);
@@ -63,9 +63,7 @@ const ExpensesList = () => {
       <td style={{whiteSpace: 'nowrap'}}>{expense.name}</td>
       <td>{expense.amount}</td>
       <td>{expense.date}</td>
-      <td>{expense.labels.map(label => {
-        return label + ", "
-      })}</td>
+      <td>{expense.label}</td>
       <td>
         <ButtonGroup>
           <Button size="sm" color="primary" tag={Link} to={"/expenses/" + expense.id}>Edit</Button>
@@ -91,7 +89,8 @@ const ExpensesList = () => {
     const offset = 2;
 
     function isInRange(expense) {
-      return expense.date >= date1.value && expense.date <= date2.value;
+      console.log("data ", date1.value);
+      return expense.date >= date1.value || date1.value == null && expense.date <= date2.value || date2.value == null;
     }
 
     function areAllUnchecked() {
@@ -104,8 +103,8 @@ const ExpensesList = () => {
 
     function isChecked(expense) {
       for (let i=0; i<labels.length; i++) {
-        console.log("in loop ", labels[i], expense.labels[0], allLabels[i+offset].checked);
-        if (labels[i] === expense.labels[0] && allLabels[i+offset].checked)
+        console.log("in loop ", labels[i], expense.label, allLabels[i+offset].checked);
+        if (labels[i] === expense.label && allLabels[i+offset].checked)
           return true;
       }
       return false;
@@ -157,7 +156,7 @@ const ExpensesList = () => {
             <th width="20%">Name</th>
             <th width="20%">Amount</th>
             <th width="20%">Date</th>
-            <th>Labels</th>
+            <th>Label</th>
             <th width="10%">Actions</th>
           </tr>
           </thead>

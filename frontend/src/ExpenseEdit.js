@@ -8,7 +8,7 @@ const ExpenseEdit = () => {
     name: '',
     amount: '',
     date: '',
-    labels: []
+    label: ''
   };
   const [expense, setExpense] = useState(initialFormState);
   const navigate = useNavigate();
@@ -30,9 +30,8 @@ const ExpenseEdit = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // console.log(typeof expense.labels);
-    expense.labels = expense.labels.split(',');
-    expense.labels = expense.labels.map(label => { label = label.toLowerCase(); console.log("lower", label); return label;});
+    // console.log(typeof expense.label);
+    expense.label = expense.label.toLowerCase();
     // console.log(typeof expense.labels);
     // console.log(expense.labels);
 
@@ -74,9 +73,9 @@ const ExpenseEdit = () => {
                    onChange={handleChange} autoComplete="date"/>
           </FormGroup>
           <FormGroup>
-            <Label for="labels">Labels</Label>
-            <Input type="text" name="labels" id="labels" value={expense.labels || ''}
-                   onChange={handleChange} autoComplete="labels"/>
+            <Label for="label">Label</Label>
+            <Input type="text" name="label" id="label" value={expense.label || ''}
+                   onChange={handleChange} autoComplete="label"/>
           </FormGroup>
           <FormGroup>
             <Button color="primary" type="submit">Save</Button>{' '}

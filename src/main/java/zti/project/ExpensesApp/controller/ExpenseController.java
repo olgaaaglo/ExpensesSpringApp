@@ -43,18 +43,18 @@ public class ExpenseController {
         expense.setName(expenseDetails.getName());
         expense.setAmount(expenseDetails.getAmount());
         expense.setDate (expenseDetails.getDate());
-        expense.setLabels(expenseDetails.getLabels());
-        final Expense updatedEmployee = expenseRepository.save(expense);
-        return ResponseEntity.ok(updatedEmployee);
+        expense.setLabel(expenseDetails.getLabel());
+        final Expense updatedExpense = expenseRepository.save(expense);
+        return ResponseEntity.ok(updatedExpense);
     }
 
     @DeleteMapping("/expenses/{id}")
     public Map<String, Boolean> deleteExpense(@PathVariable(value = "id") Long id)
             throws ResourceNotFoundException {
-        Expense employee = expenseRepository.findById(id)
+        Expense expense = expenseRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Expense not found for this id: " + id));
 
-        expenseRepository.delete(employee);
+        expenseRepository.delete(expense);
         Map<String, Boolean> response = new HashMap<>();
         response.put("deleted", Boolean.TRUE);
         return response;

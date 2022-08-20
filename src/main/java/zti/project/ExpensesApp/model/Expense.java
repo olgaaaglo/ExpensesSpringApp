@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,8 +20,11 @@ public class Expense {
     private String name;
     private int amount;
     private String date;
-    @ElementCollection
-    private List<String> labels;
+    private String label;
+
+    public String toString() {
+        return name + " (amount: " + amount + ", date: " + date + ", label: " + label + ")";
+    }
 
 //    @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)

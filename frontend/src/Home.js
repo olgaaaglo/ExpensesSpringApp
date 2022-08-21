@@ -8,9 +8,11 @@ const Home = () => {
   return (
     <div>
       <AppNavbar/>
+      <div class="center">
       <Container fluid>
-        <Button color="link"><Link to="/expenses">Manage expenses</Link></Button>
+        <Button color="info" size="lg" tag={Link} to={"/expenses"}>Manage expenses</Button>
       </Container>
+      </div>
     </div>
   );
 }

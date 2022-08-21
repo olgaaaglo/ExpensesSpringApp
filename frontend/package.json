@@ -21,7 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:8181",
+  "proxy": "https://expenses-app-zti.herokuapp.com",
   "eslintConfig": {
     "extends": [
       "react-app",

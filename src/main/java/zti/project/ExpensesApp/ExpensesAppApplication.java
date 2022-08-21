@@ -24,7 +24,7 @@ public class ExpensesAppApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/api/expenses").allowedOrigins("https://expenses-app-zti-front.herokuapp.com");
+				registry.addMapping("/**").allowedOrigins("https://expenses-app-zti-front.herokuapp.com").allowedMethods("*");
 			}
 		};
 	}

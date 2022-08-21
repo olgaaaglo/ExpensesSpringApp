@@ -14,24 +14,22 @@ import zti.project.ExpensesApp.repository.ExpenseRepository;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "https://expenses-app-zti-front.herokuapp.com")
 public class ExpenseController {
     @Autowired
     private ExpenseRepository expenseRepository;
 
-    @CrossOrigin(origins = "https://expenses-app-zti-front.herokuapp.com")
     @GetMapping("/expenses")
     public List<Expense> getAllExpenses() {
         return expenseRepository.findAll();
     }
 
-    @CrossOrigin(origins = "https://expenses-app-zti-front.herokuapp.com")
     @GetMapping("/expenses/{id}")
     public Expense getExpense(@PathVariable(value = "id") Long id) throws ResourceNotFoundException {
         return expenseRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Expense not found for this id: " + id));
     }
 
-    @CrossOrigin(origins = "https://expenses-app-zti-front.herokuapp.com")
     @PostMapping("/expenses")
     public Expense createExpense(@RequestBody Expense expense) {
         return expenseRepository.save(expense);

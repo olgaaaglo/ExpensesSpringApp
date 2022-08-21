@@ -14,7 +14,6 @@ import zti.project.ExpensesApp.repository.ExpenseRepository;
 
 @RestController
 @RequestMapping("/api")
-//@CrossOrigin(origins = "https://expenses-app-zti-front.herokuapp.com", allowedHeaders = "*")
 public class ExpenseController {
     @Autowired
     private ExpenseRepository expenseRepository;

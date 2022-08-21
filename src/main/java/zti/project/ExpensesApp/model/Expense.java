@@ -25,38 +25,4 @@ public class Expense {
     public String toString() {
         return name + " (amount: " + amount + ", date: " + date + ", label: " + label + ")";
     }
-
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    public long getId() {
-//        return id;
-//    }
-
-//    @Column(name = "labels", nullable = true)
-//    public String[] getLabels() {
-//        return labels;
-//    }
-//    public void setLabels(List<String> labels) {
-//        this.labels = labels;
-//    }
-
-
-//    public void setId(long id) {
-//        this.id = id;
-//    }
-//
-//    @Column(name = "fname", nullable = false)
-//    public String getFname() {
-//        return fname;
-//    }
-//    public void setFname(String firstName) {
-//        this.fname = firstName;
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return "Person [id=" + id + ", firstName=" + name
-//                + "]";
-//    }
-
 }

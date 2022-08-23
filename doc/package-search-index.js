@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"zti.project.ExpensesApp"},{"l":"zti.project.ExpensesApp.controller"},{"l":"zti.project.ExpensesApp.exception"},{"l":"zti.project.ExpensesApp.model"},{"l":"zti.project.ExpensesApp.repository"}];updateSearchResults();

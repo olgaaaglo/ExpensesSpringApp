@@ -8,7 +8,9 @@ import zti.project.ExpensesApp.model.Expense;
 
 import java.util.ArrayList;
 
-
+/**
+ * Klasa aspekt - uzywa rad Around, aby wyswietlic logi, dzieki ktorym mozna sprawdzic poprawnosz dzialania aplikacji
+ */
 @Aspect
 @Configuration
 public class ControllerAspect {

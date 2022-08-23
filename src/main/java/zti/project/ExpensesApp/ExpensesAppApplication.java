@@ -11,9 +11,11 @@ public class ExpensesAppApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ExpensesAppApplication.class, args);
-		System.out.println("hi");
 	}
 
+	/**
+	 * Konfiguracja CORS
+	 */
 	@Bean
 	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurer() {

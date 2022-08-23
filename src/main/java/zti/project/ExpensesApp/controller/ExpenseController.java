@@ -12,6 +12,9 @@ import zti.project.ExpensesApp.exception.ResourceNotFoundException;
 import zti.project.ExpensesApp.model.Expense;
 import zti.project.ExpensesApp.repository.ExpenseRepository;
 
+/**
+ * Kontroler aplikacji - endopointy do dzialania na bazie
+ */
 @RestController
 @RequestMapping("/api")
 public class ExpenseController {

@@ -7,6 +7,9 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+/**
+ * Klasa reprezentujaca tabele w bazie danych - wydatek
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -18,7 +21,7 @@ public class Expense {
     @GeneratedValue
     private long id;
     private String name;
-    private int amount;
+    private double amount;
     private String date;
     private String label;
 
